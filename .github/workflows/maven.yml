@@ -19,5 +19,6 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-  
+    - name: Build for Jar Execution
+      run: sudo kill -9 `sudo lsof -t -i:80` & sudo java -jar /home/ubuntu/actions-runner/_work/Java-Maven-Application/Java-Maven-Application/target/demo-0.0.1-SNAPSHOT.jar &
     
